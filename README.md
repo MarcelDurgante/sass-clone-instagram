@@ -125,16 +125,62 @@ A variable allows you us store a value or a set of values (information/informati
 
 #### What is a mixin? Why is it important? Give an example
 
-Mixins allow you to define styles that can be re-used throughout your stylesheet. They make it easy to avoid using non-semantic classes like .float-left, and to distribute collections of styles in libraries.
+Mixins allow you to define styles that can be re-used throughout your stylesheet. They make it easy to avoid using non-semantic classes like _.float-left_, and to distribute collections of styles in libraries.
 
 Mixins are defined using the **@mixin** at-rule, which is written **@mixin \<name> { ... }** or **@mixin name(<arguments...>) \{ ... }**. A mixin’s name can be any Sass _identifier_, and it can contain any statement other than _top-level statements_. They can be used to encapsulate styles that can be dropped into a single style rule; they can contain style rules of their own that can be nested in other rules or included at the top level of the stylesheet; or they can just serve to _modify variables_.
 
-Mixins are included into the current context using the **@include** at-rule, which is written @include <name> or @include <name>(<arguments...>), with the name of the mixin being included.
+Mixins are included into the current context using the **@include** at-rule, which is written **\@include <name** or **\@include \<name>(<arguments...>)**, with the name of the mixin being included.
   
-To summarize: The **\@mixin** lets you create CSS code that is to be reused throughout the website. The @include directive is created to let you use (include) the mixin.
+To summarize: The **\@mixin** lets you create CSS code that is to be reused throughout the website. The **\@include** directive is created to let you use (include) the mixin.
 
 #### What is SCSS? Give an example
-#### What is SASS? Give an example
+
+SCSS is a special type of file for SASS, a program written in Ruby that assembles CSS style sheets for a browser, and for information, SASS adds lots of additional functionality to CSS. In SCSS, you can save any CSS value (even with units) in variables. Variables are defined using the $ symbol. When Sass is converted to CSS, all the variables are replaced with their original values keeping them (fonts, colors, and other values) consistent thought a website or web app.
+
+SCSS files are processed by the server running a web app to output a traditional CSS that your browser can understand.
+
+>**Variables**
+>
+>Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable. Here's an example:
+>><img src="https://i.ibb.co/ryh1tx6/Screen-Shot-2021-09-05-at-00-35-39.png" />
+>When the Sass is processed, it takes the variables we define for the $font-stack and $primary-color and outputs normal CSS with our variable values placed in the CSS. This can be extremely powerful when working with brand colors and keeping them consistent throughout the site.
+
+>**Nesting (nested selectors)**
+>
+>When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.
+>Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.
+>With that in mind, here's an example of some typical styles for a site's navigation:
+>><img src="https://i.ibb.co/3rBwGD7/Screen-Shot-2021-09-05-at-01-41-20.png" />
+>You'll notice that the ul, li, and a selectors are nested inside the nav selector. This is a great way to organize your CSS and make it more readable.
+
+>**Modules**
+>
+>You don't have to write all your Sass in a single file. You can split it up however you want with the @use rule. This rule loads another Sass file as a module, which means you can refer to its variables, mixins, and functions in your Sass file with a namespace based on the filename. Using a file will also include the CSS it generates in your compiled output!
+>><img src="https://i.ibb.co/6gC39nF/Screen-Shot-2021-09-05-at-00-19-56.png" alt="Screen-Shot-2021-09-05-at-00-19-56" border="0"></a><br /><a target='_blank' href='https://es.imgbb.com/' />
+>Notice we're using \@use \'base'; in the _styles.scss_ file. When you use a file you don't need to include the file extension. Sass is smart and will figure it out for you.
+
+>**Mixins**
+>
+>Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here's an example for theme.
+>><img src="https://i.ibb.co/Ptcdd1f/Screen-Shot-2021-09-05-at-01-46-19.png" />
+>To create a mixin you use the \@mixin directive and give it a name. We've named our mixin theme. We're also using the variable \$theme inside the parentheses so we can pass in a theme of whatever we want. After you create your mixin, you can then use it as a CSS declaration starting with \@include followed by the name of the mixin.
+
+>**Extend/Inheritance**
+>
+>This is one of the most useful features of Sass. Using \@extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes using another feature which goes hand in hand with extend, placeholder classes. A placeholder class is a special type of class that only prints when it is extended, and can help keep your compiled CSS neat and clean.
+>><img src="https://i.ibb.co/rybBYc7/Screen-Shot-2021-09-05-at-01-49-20.png" />
+>><img src="https://i.ibb.co/ZXPyFhx/Screen-Shot-2021-09-05-at-01-50-08.png" />
+>><img src="https://i.ibb.co/ZXPyFhx/Screen-Shot-2021-09-05-at-01-50-08.png" />
+>What the above code does is tells .message, .success, .error, and .warning to behave just like %message-shared. That means anywhere that %message-shared shows up, .message, .success, .error, & .warning will too. The magic happens in the generated CSS, where each of these classes will get the same CSS properties as %message-shared. This helps you avoid having to write multiple class names on HTML elements.
+
+You can extend most simple CSS selectors in addition to placeholder classes in Sass, but using placeholders is the easiest way to make sure you aren't extending a class that's nested elsewhere in your styles, which can result in unintended selectors in your CSS.
+
+Note that the CSS in %equal-heights isn't generated, because %equal-heights is never extended.
+
+
+#### Give an example of what is SASS?
+
+
 #### What is the difference between .scss and .sass syntax.
 #### In which cases would we use SCSS? And in which cases would we use SASS?
 #### Explain how traditional CSS and Preprocessed CSS workflows are different.
@@ -145,3 +191,6 @@ To summarize: The **\@mixin** lets you create CSS code that is to be reused thro
 #### Explain the concept of inheritance in SASS.
 #### Why use @extend? Give an example
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+<img src="https://media.giphy.com/media/qLHzYjlA2FW8g/giphy.gif" />
+:octocat:
