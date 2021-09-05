@@ -73,7 +73,7 @@ To deliver this project you must follow the steps indicated in the document:
 
 ## 1.1. Theory Questions Answered
 
-#### What is SASS? What does SASS stand for?
+#### 1. What is SASS? What does SASS stand for?
 
 "CSS with superpowers". As they say about themselves in their website:
 
@@ -87,17 +87,17 @@ With Sass you can break up your stylesheet into subfiles like _\_nav.scss_, _\_t
 
 You can create and use **mixins** which are essentially a block of styles you can insert to your rules. One way I use mixins is for _fonts_. Often fonts have a font-family, color, font-weight, etc that when I declare a font I want all of those properties to be applied. This saves you time maintaining all of the properties throughout your stylesheet.
 
-#### What is a CSS pre-processor?
+#### 2. What is a CSS pre-processor?
 
 CSS preprocessors are scripting languages that extend the default capabilities of CSS. They enable us to use logic in our CSS code, such as _variables, nesting, inheritance, mixins, functions,_ and _mathematical operations_. CSS preprocessors make it easy to automate repetitive tasks, reduce the number of errors and code bloat, create reusable code snippets, and ensure backward compatibility.
 
 Each CSS preprocessor has its own syntax that they compile into regular CSS so that browsers can render it on the client side. Currently, the three most popular and stable CSS preprocessors are **Sass, LESS,** and **Stylus**, however there are many smaller ones as well. CSS preprocessors all do similar things but in a different way and with their own syntaxes. Each of them has some advanced features unique to them and their own ecosystem (tools, frameworks, libraries) as well.
 
-#### What does a pre-processor have to do with SASS?
+#### 3. What does a pre-processor have to do with SASS?
 
 In short, Sass is a CSS preprocessor, which adds special features such as _variables, nested rules and mixins_ (sometimes referred to as syntactic sugar) into regular CSS. **The aim is to make the coding process simpler and more efficient.**
 
-#### Why use SASS?
+#### 4. Why use SASS?
 
 Sass (and other CSS preprocessors) can be a powerful ally — a tool that any style-crafter can easily insert into their daily work.
 
@@ -107,23 +107,39 @@ To overcome most of these limitations, the concept of a preprocessor was born �
 
 As our web pages and apps get more complex our style sheets get larger and harder to maintain. CSS preprocessors like Sass help by keeping our style sheets concise and allowing us to modularize our code while offering a whole slew of features not yet available in regular CSS.
 
-#### SASS has disadvantages? Which are?
+#### 5. SASS has disadvantages? Which are?
 
-- Sass disadvantages
 - The developer must have enough time to learn new features present in this preprocessor before using it.
 - Using Sass may cause losing benefits of browser’s built-in element inspector.
 - Code has to be compiled
 - Difficult  Troubleshooting
  
-#### What is a SASS Variable? Explain why are useful
+#### 6. What is a SASS Variable? Explain why are useful
 
 Sass variables are used to store information that can be reused throughout the stylesheet when you need. Thet are useful because you can store things like colors, font stacks, or any CSS value according to your future reusability.
 
-#### Explain the SASS variables property with an example.
+#### 7. Explain the SASS variables property with an example.
 
 A variable allows you us store a value or a set of values (information/informations) inside given variables (like strings, numbers, etc). With Sass you can reuse these variables throughout our SASS files as many times we want and wherever we want. Easy, powerful, and useful.
+<br>
+>**SASS**
+>><img src="https://i.ibb.co/Fw0DQwJ/Screen-Shot-2021-09-05-at-17-41-16.png" />
+>
+>**SCSS**
+>><img src="https://i.ibb.co/fFNQXj5/Screen-Shot-2021-09-05-at-18-02-30.png" />
 
-#### What is a mixin? Why is it important? Give an example
+#### or
+>**SASS**
+>><img src="https://i.ibb.co/j6wspNh/Screen-Shot-2021-09-05-at-17-47-48.png" />
+>
+>**SCSS**
+>><img src="https://i.ibb.co/t4Hrs5L/Screen-Shot-2021-09-05-at-17-50-43.png" />
+
+#### HEADS UP ⚠️
+
+><img src="https://i.ibb.co/82tjQzQ/Screen-Shot-2021-09-05-at-17-45-45.png" />
+
+#### 8. What is a mixin? Why is it important? Give an example
 
 Mixins allow you to define styles that can be re-used throughout your stylesheet. They make it easy to avoid using non-semantic classes like _.float-left_, and to distribute collections of styles in libraries.
 
@@ -133,7 +149,13 @@ Mixins are included into the current context using the **@include** at-rule, whi
   
 To summarize: The **\@mixin** lets you create CSS code that is to be reused throughout the website. The **\@include** directive is created to let you use (include) the mixin.
 
-#### What is SCSS? Give an example
+>**SASS**
+>><img src="https://i.ibb.co/hV4djfx/Screen-Shot-2021-09-05-at-18-17-30.png" />
+>
+>**SCSS**
+>><img src="https://i.ibb.co/zVm2DG0/Screen-Shot-2021-09-05-at-18-19-22.png" />
+
+#### 9. What is SCSS? Give an example
 
 SCSS is a special type of file for SASS, a program written in Ruby that assembles CSS style sheets for a browser, and for information, SASS adds lots of additional functionality to CSS. In SCSS, you can save any CSS value (even with units) in variables. Variables are defined using the $ symbol. When Sass is converted to CSS, all the variables are replaced with their original values keeping them (fonts, colors, and other values) consistent thought a website or web app.
 
@@ -170,7 +192,6 @@ SCSS files are processed by the server running a web app to output a traditional
 >This is one of the most useful features of Sass. Using \@extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes using another feature which goes hand in hand with extend, placeholder classes. A placeholder class is a special type of class that only prints when it is extended, and can help keep your compiled CSS neat and clean.
 >><img src="https://i.ibb.co/rybBYc7/Screen-Shot-2021-09-05-at-01-49-20.png" />
 >><img src="https://i.ibb.co/ZXPyFhx/Screen-Shot-2021-09-05-at-01-50-08.png" />
->><img src="https://i.ibb.co/ZXPyFhx/Screen-Shot-2021-09-05-at-01-50-08.png" />
 >What the above code does is tells .message, .success, .error, and .warning to behave just like %message-shared. That means anywhere that %message-shared shows up, .message, .success, .error, & .warning will too. The magic happens in the generated CSS, where each of these classes will get the same CSS properties as %message-shared. This helps you avoid having to write multiple class names on HTML elements.
 >You can extend most simple CSS selectors in addition to placeholder classes in Sass, but using placeholders is the easiest way to make sure you aren't extending a class that's nested elsewhere in your styles, which can result in unintended selectors in your CSS.
 
@@ -179,10 +200,10 @@ SCSS files are processed by the server running a web app to output a traditional
 >**Operators**
 >
 >Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. In our example we're going to do some simple math to calculate widths for an aside & article.
->><img src="https://i.ibb.co/rHDSdGC/Screen-Shot-2021-09-05-at-01-51-30.png" \>
+>><img src="https://i.ibb.co/WpNw1sn/Screen-Shot-2021-09-05-at-21-35-32.png" />
 >We've created a very simple fluid grid, based on 960px. Operations in Sass let us do something like take pixel values and convert them to percentages without much hassle.
 
-#### Give an example of what is SASS?
+#### 10. Give an example of what is SASS?
 
 >**Comments**
 >
@@ -215,6 +236,11 @@ SCSS files are processed by the server running a web app to output a traditional
 >The new module system and the @use rule address all these problems.
 >
 >><img src="https://i.ibb.co/7QhZ9SM/Screen-Shot-2021-09-05-at-02-55-29.png" />
+>
+>**⚠️**
+>**There are so much more info about @use. Refer to the link below for more documentation**
+>
+>"https://sass-lang.com/documentation/at-rules/use"
 
 >**Mixins and Include**
 >
@@ -232,28 +258,124 @@ SCSS files are processed by the server running a web app to output a traditional
 >
 >The @if rule is written @if <expression> { ... }, and it controls whether or not its block gets evaluated (including emitting any styles as CSS). The expression usually returns either true or false—if the expression returns true, the block is evaluated, and if the expression returns false it’s not.
 >><img src="https://i.ibb.co/WDV2Grn/Screen-Shot-2021-09-05-at-03-00-10.png" />
-
+  
 >**Loops**
 >The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map. It’s great for repetitive styles that only have a few variations between them. It’s usually written @each <variable> in <expression> { ... }, where the expression returns a list. The block is evaluated for each element of the list in turn, which is assigned to the given variable name.
 >><img src="https://i.ibb.co/m8d9xKp/Screen-Shot-2021-09-05-at-03-02-16.png" />
 
 >**Media Queries**
 >
+>><img src="https://i.ibb.co/B2pY8sD/Screen-Shot-2021-09-05-at-23-46-18.png" />
+>
+>**More**
+>A media queries can be applied in CSS to enable different values to be given to properties of selectors based upon the width of the viewport.
+>
+```scss
+h1 {
+  font-size: 26px;
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+```
+
+>The above example contains a CSS rule that sets a value of 26px for the \<h1> selector. This dictates the size of the font until the screen width drops below a breakpoint of 900px, at which point the media queries kicks in and adjusts the font size to 24px.
+>
+>One media query tends to be set for each breakpoint and that one query contains all the CSS rules that need to be adjusted.
+>
+>This is all well and good and media queries established in this way have served me well. However, my media queries are often located quite a long way from the CSS rules they are adapting. Imagine that the h1 rule above is located near the top of the CSS document, say around line 15. If the document were several hundred lines long and the media query located at the bottom, perhaps around line 250, it would be tricky to navigate quickly between the two.
+>
+>I often find myself scrolling up and down, having looked at a rule in the media query, trying to find the original code further up the document.
+>
+>**Sass and media queries**
+>With Sass, it is possible to nest a media query directly within the CSS rule:
+```scss
+h1 {
+  font-size: 26px;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
+}
+```
+>This removes the need the name the CSS rule twice, making the code more succinct. It also ensures that all the code related to this particular rule is located in the same place.
+>
+>No more scrolling up and down, hunting for two (or three or four – if multiple media queries affect the h1 rule) associated blocks of code.
+>
+>**An issue**
+>Writing media queries in this way presents a new problem – instead of having a media query defined in one place, there might be as many smaller media queries as >there are rules within the CSS document.
+>
+>This would be a problem if in the future you needed to adjust the breakpoint value from, say, 900px to 950px. It would be necessary to scroll through the entire codebase, hunting down dozens of media queries.
+>
+>**Mixins to the rescue!**
+>Luckily, mixins can solve this issue by allowing us to define the media query in one location and to then apply it around the codebase wherever it is needed.
+
+```scss
+@mixin respond-medium {
+  @media (max-width: 900px) { @content }
+}
+
+>The content directive – @content – allows us to pass a block of code into the mixin. Once the mixin is set up, we can apply it:
+
+```scss
+h1 {
+  font-size: 26px;
+  @include respond-medium {
+    font-size: 24px;
+  }
+}
+```
+>**Multiple media queries**
+>  
+>We can go one step further to establish one mixin that handles multiple media queries, allowing us to set different breakpoints easily.
+  
+```scss  
+@mixin respond($breakpoint) {
+  @if($breakpoint == medium)  {
+    @media (max-width: 900px) { @content }
+  }
+  @if($breakpoint == small)  {
+    @media (max-width: 600px) { @content }
+  }
+}
+```
+  
+>Here we have established a variable called $breakpoint. Depending upon what is passed in for this variable (medium or small), the correct media query is set.
+>
+>With this done, we can easily apply multiple media queries:
+  
+```scss  
+h1 {
+  font-size: 26px;
+  @include respond(medium) {
+     font-size: 24px;
+   }
+  @include respond(small) {
+     font-size: 20px;
+   }
+}
+```
+
+>This example would ensure that the h1 font-size, normally 26px, would be 24px in viewports less than 900px wide and 20px in viewports less than 600px wide.
+  
+>**More**
 >><img src="https://i.ibb.co/Fbzn2js/Screen-Shot-2021-09-05-at-03-04-47.png" />
 >><img src="https://i.ibb.co/g47nZbg/Screen-Shot-2021-09-05-at-03-05-34.png" />
 
-#### What is the difference between .scss and .sass syntax.
+#### 11. What is the difference between .scss and .sass syntax.
   
 SASS (Syntactically Awesome Style Sheets) is a pre-processor scripting language that will be compiled or interpreted into CSS. SassScript is itself a scripting language whereas SCSS is the main syntax for the SASS which builds on top of the existing CSS syntax. It makes use of semicolons and brackets like CSS (Cascaded Style Sheets).
   
-SASS and SCSS can import each other. Sass actually makes CSS more powerful with math and variable support. 
-Let’s list down the main difference between SASS and SCSS. 
- 
-- SASS is used when we need an original syntax, code syntax is not required for SCSS.
-- SASS follows strict indentation, SCSS has no strict indentation.
-- SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to CSS style and use of semicolons and braces are mandatory.
-- SASS file extension is .sass and SCSS file extension is .scss.
-- SASS has more developer community and support than SCSS.
+There’s not only one syntax that you can use SASS in, but two: One has the original form, which is usually referred to as “indented syntax” or simply “SASS” for short. But there is also a new variant, which is more strongly oriented to the standards of CSS and so is called sassy CSS (SCSS) – so, SASS-style CSS. Version 3 of SASS has SCSS as an official syntax. The biggest difference: the use of parentheses and semicolons.
+
+The original SASS syntax works with indents and line breaks, a process adapted from YAML. To finish a line of code, it’s sufficient to insert a line break – so press the enter key. Indents function simply using the tab button. Groupings, called declaration blocks, are formed by changing the position in the typeface. This isn’t possible with CSS itself. Here, you have to use parentheses for the groupings and semicolons for the property declarations. This is exactly what’s necessary for SCSS.
+
+The variations command fierce loyalty: Some users swear by the simple handling of the original SASS, where you don’t have to pay attention to the correct positioning of the parentheses when moving snippets of source code and can generally create slimmer, clearer code. You end up with fewer characters and lines overall as a result of the “indented syntax.” The SCSS enthusiasts, on the other hand, are happy to take the additional effort in stride, because it’s more similar to what you already know from using CSS.
+
+SCSS is a superset of CSS, which guarantees that the CSS code fundamentally works in SCSS as well – but not the other way around. The functions of SASS are still fully contained, though. This makes it easier to work with both languages at the same time. 
 
 >**SCSS Example:** 
 >>```scss
@@ -295,17 +417,17 @@ Let’s list down the main difference between SASS and SCSS.
 >>}
 >>```
   
-#### In which cases would we use SCSS? And in which cases would we use SASS?
+#### 12. In which cases would we use SCSS? And in which cases would we use SASS?
 
-- SASS is used when we need a original syntax, code syntax is not required for SCSS. 
-- SASS follows strict indentation, SCSS has no strict indentation. 
+>SASS and SCSS can import each other. Sass actually makes CSS more powerful with math and variable support. People who already work with CSS and are comfortable with the syntax have a much easier time switching over. Even though SASS supports both syntaxes, you still have to decide for each project: to be able to distinguish between the different formats, give the files either the file ending “.sass” or “.scss.”  Let’s list down the main difference between SASS and SCSS that will help you decide when to use it or not.
+ 
+- SASS is used when we need an original syntax, code syntax is not required for SCSS.
+- SASS follows strict indentation, SCSS has no strict indentation.
 - SASS has a loose syntax with white space and no semicolons, the SCSS resembles more to CSS style and use of semicolons and braces are mandatory.
+- SASS file extension is .sass and SCSS file extension is .scss.
+- SASS has more developer community and support than SCSS.
   
-#### Explain how traditional CSS and Preprocessed CSS workflows are different.
-  
-traditional CSS basically applies a CSS stylesheet to the HTML file, whereas preprocessed CSS needs to compile the SASS code file and then generate the CSS stylesheet.
-  
-#### Can we create functions with SASS? If it is true, give an example.
+#### 14. Can we create functions with SASS? If it is true, give an example.
   
 Yes, we can.
 
@@ -329,8 +451,25 @@ Yes, we can.
 >>  float: left;
 >>  margin-left: 64px;
 >>}
-  
-#### What is nesting? Is it useful? Give an example of nesting
+**More**
+>Defining a function in Sass is similar to the syntax for a mixin:
+```scss
+// a variable that holds a value for use later
+$w: 2px;
+
+// defining the function
+@function double($x) {
+  @return 2 * $x;
+}
+
+.thin-border {
+  border-width: $w;  // results in a 2px border-width
+}
+.thick-border {
+  border-width: double($w); // results in a 4px border-width
+}
+```
+#### 15. What is nesting? Is it useful? Give an example of nesting
 >**SASS**
 >**Nesting**
 >
@@ -384,7 +523,7 @@ Yes, we can.
 >>    }
 >>```
   
-#### Difference between @use & @import? Give an example
+#### 16. Difference between @use & @import? Give an example
   
 >**import vs use**
 >
@@ -401,7 +540,7 @@ Yes, we can.
 >
 >><img src="https://i.ibb.co/7QhZ9SM/Screen-Shot-2021-09-05-at-02-55-29.png" />
   
-#### How can we import other CSS/SASS files in SASS? Give an example
+#### 17. How can we import other CSS/SASS files in SASS? Give an example
   
 - @import "path/to/file";
   or
@@ -429,7 +568,7 @@ button {
   or
 >@import "anothermodule";
 
-#### Explain the concept of inheritance in SASS.
+#### 18. Explain the concept of inheritance in SASS.
   
 Inheritance is a feature of Sass that allows classes to share a set of properties with one another. Selectors that @extend a class in Sass will have their selector included right up next to the class it is extending, resulting in a comma separated list. 
 
@@ -445,7 +584,7 @@ extend, placeholder classes.
 class that only prints when it is extended, and can help keep your
 compiled CSS neat and clean.
   
-#### Why use @extend? Give an example
+#### 19. Why use @extend? Give an example
   
 This is one of the most useful features of Sass. Using @extend lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we're going to create a simple series of messaging for errors, warnings and successes using another feature which goes hand in hand with extend, placeholder classes. A placeholder class is a special type of class that only prints when it is extended, and can help keep your compiled CSS neat and clean.
 ```css
@@ -533,26 +672,26 @@ Using @extend saves a lot of time in the long run if the snippets of SASS code a
 >>.reset-buttons { 
 >>  color: #cddc39; 
 >>}
-```
-**More examples
-```scss
-%card {
-    width: 200px;
-    height: 400px;
-    color: "#3039FC";
-}
-.card-1 {
-    @extend %card;
-    background: yellow;
-}
-.card-2 {
-    @extend %card;
-    background: pink;
-}
-.card-3 {
-    @extend %card;
-    background: white;
-}
-```
+>>```
+>>**More examples
+>>```scss
+>>%card {
+>>    width: 200px;
+>>    height: 400px;
+>>    color: "#3039FC";
+>>}
+>>.card-1 {
+>>    @extend %card;
+>>    background: yellow;
+>>}
+>>.card-2 {
+>>    @extend %card;
+>>    background: pink;
+>>}
+>>.card-3 {
+>>    @extend %card;
+>>    background: white;
+>>}
+>>```
 <br>
 <img src="https://media.giphy.com/media/qLHzYjlA2FW8g/giphy.gif" />
